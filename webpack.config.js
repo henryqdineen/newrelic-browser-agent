@@ -162,16 +162,7 @@ const standardConfig = merge(commonConfig, {
           options: {
             presets: [
               ['@babel/preset-env', {
-                targets: {
-                  browsers: [
-                    'last 10 Chrome versions',
-                    'last 10 Safari versions',
-                    'last 10 Firefox versions',
-                    'last 10 Edge versions',
-                    'last 10 ChromeAndroid versions',
-                    'last 10 iOS versions'
-                  ]
-                }
+                debug: true
               }]
             ],
             plugins: [
@@ -189,7 +180,7 @@ const standardConfig = merge(commonConfig, {
     instantiateSourceMapPlugin(),
     ...instantiateBundleAnalyzerPlugin('standard')
   ],
-  target: 'web'
+  target: 'browserslist'
 })
 
 // Targets Internet Explorer 11 (ES5).
